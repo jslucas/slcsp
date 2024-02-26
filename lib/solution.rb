@@ -1,3 +1,4 @@
+require 'csv'
 require 'db'
 require 'slcsp'
 
@@ -7,6 +8,7 @@ module Solution
   def self.call(input = "slcsp.csv", output = "result.csv", db = Db.instance)
     CSV.open(output, "w") do |file|
       file << @headers
+      puts @headers.join(',')
 
       CSV.foreach(input, headers: true) do |row|
         row["rate"] =
@@ -16,6 +18,7 @@ module Solution
             .then { |maybe_rate| SLCSP.format(maybe_rate) }
 
         file << row
+        puts row.to_s
       end
     end
   end

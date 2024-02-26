@@ -37,4 +37,12 @@ describe Solution do
         .to eq("245.20")
     end
   end
+
+  describe "output" do
+    it "outputs to stdout" do
+      expect do
+        subject
+      end.to output("zipcode,rate\n64148,245.20\n").to_stdout
+    end
+  end
 end
