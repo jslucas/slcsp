@@ -8,6 +8,18 @@ class Db
     @db.execute(q).flatten
   end
 
+  def silver_rates_for(zip)
+    query <<-SQL
+      select distinct p.rate
+      from plans p
+      join zips z
+      on p.state = z.state
+      and p.rate_area = z.rate_area
+      where p.metal_level = "Silver"
+      and z.zipcode = #{zip};
+    SQL
+  end
+
   def zips
     query <<-SQL
       select distinct(state) from zips where zipcode='36703';
