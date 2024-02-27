@@ -10,7 +10,7 @@ bundle install
 rake run
 ```
 
-Solution is printed to stdout and written to ./result.csv
+Solution is printed to stdout and written to `./result.csv`
 
 To run specs:
 ```
