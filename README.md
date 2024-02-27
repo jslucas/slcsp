@@ -1,5 +1,23 @@
 # SLCSP
 
+## Solution
+
+This solution is using Ruby 3.3.0. You will need to have it installed, if using `asdf` you can run `asdf install`-- a `.tool-versions` file is included. Otherwise use your preferred version manager.
+
+To run:
+```
+bundle install
+rake run
+```
+
+Solution is printed to stdout and written to ./result.csv
+
+To run specs:
+```
+bundle exec rspec
+```
+
+
 ## Calculate the second lowest cost silver plan
 
 ## Problem
